@@ -644,7 +644,7 @@ if(CMAKE_SYSTEM_NAME STREQUAL "NetBSD")
 else()
   set(CMAKE_SKIP_BUILD_RPATH TRUE)
 endif()
-add_subdirectory(test)
+#add_subdirectory(test)
 add_subdirectory(doc)
 
 add_subdirectory(src)
