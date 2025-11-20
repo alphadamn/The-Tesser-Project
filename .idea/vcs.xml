@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/testing stuff/bfgminer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/testing stuff/bfgminer/bfgminer-5.4.2-mac/bfgminer/bin/cl.miner" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/testing stuff/bfgminer/bfgminer-5.4.2-mac/bfgminer/bin/hashfast" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/testing stuff/bfgminer/bfgminer-5.4.2-mac/bfgminer/bin/miner_stratum_proxy" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/testing stuff/bitcoin-seeder" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/testing stuff/cpuminer-multi" vcs="Git" />
+  </component>
+</project>
