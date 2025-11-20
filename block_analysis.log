@@ -1,0 +1,46 @@
+2025-11-16 21:13:37,557 - ERROR - Failed to connect to node: -342: non-JSON HTTP response with '401 Unauthorized' from server
+2025-11-16 21:25:17,709 - INFO - Connected to node. Chain: main, Blocks: 1
+2025-11-16 21:25:17,710 - INFO - Starting comprehensive block analysis...
+2025-11-16 21:25:17,710 - INFO - Best block hash: 00000000845739341ad54be10ec8e8052554935b9dec5b0ab0e85d5b6eb285ec
+2025-11-16 21:25:17,721 - INFO - === BLOCK STRUCTURE ANALYSIS ===
+2025-11-16 21:25:17,721 - INFO - Block height: 1
+2025-11-16 21:25:17,721 - INFO - Block hash: 00000000845739341ad54be10ec8e8052554935b9dec5b0ab0e85d5b6eb285ec
+2025-11-16 21:25:17,721 - INFO - Previous block: 000000005b5e0a114fd5109172a9eb676a6fca530ecf8f39b11a4ee03959bd09
+2025-11-16 21:25:17,721 - INFO - Timestamp: 2025-11-16 17:03:32
+2025-11-16 21:25:17,721 - INFO - Difficulty: 1
+2025-11-16 21:25:17,721 - INFO - Bits: 1d00ffff
+2025-11-16 21:25:17,721 - INFO - Nonce: 24874716
+2025-11-16 21:25:17,721 - INFO - Transaction count: 1
+2025-11-16 21:25:17,721 - INFO - Block size: 215 bytes
+2025-11-16 21:25:17,721 - INFO - Block weight: 860
+2025-11-16 21:25:17,722 - INFO - Coinbase transaction: af175922c213a879f40bddfd86d36d50d8f6ff083aa59b2478154fe668d9e6f2
+2025-11-16 21:25:17,722 - INFO -   Coinbase data: 5100
+2025-11-16 21:25:17,722 - INFO - Total fees in block: 0.00000000 BTC
+2025-11-16 21:25:17,722 - INFO - Calculating Merkle root from 1 transactions
+2025-11-16 21:25:17,722 - INFO - Calculated Merkle root: af175922c213a879f40bddfd86d36d50d8f6ff083aa59b2478154fe668d9e6f2
+2025-11-16 21:25:17,722 - INFO - Calculated Merkle: af175922c213a879f40bddfd86d36d50d8f6ff083aa59b2478154fe668d9e6f2
+2025-11-16 21:25:17,722 - INFO - Actual Merkle:     af175922c213a879f40bddfd86d36d50d8f6ff083aa59b2478154fe668d9e6f2
+2025-11-16 21:25:17,722 - INFO - Merkle root match: True
+2025-11-16 21:25:17,722 - INFO - === BLOCK HASH VERIFICATION ===
+2025-11-16 21:25:17,722 - INFO - Calculating Merkle root from 1 transactions
+2025-11-16 21:25:17,722 - INFO - Calculated Merkle root: af175922c213a879f40bddfd86d36d50d8f6ff083aa59b2478154fe668d9e6f2
+2025-11-16 21:25:17,722 - INFO - Block header assembled successfully
+2025-11-16 21:25:17,722 - INFO - Header length: 80 bytes
+2025-11-16 21:25:17,722 - INFO - Calculated hash: ecab2d0ffcf0ae840bf1da92cfa0c154635984724439b9c96aba27041db2975e
+2025-11-16 21:25:17,722 - INFO - Actual hash:    00000000845739341ad54be10ec8e8052554935b9dec5b0ab0e85d5b6eb285ec
+2025-11-16 21:25:17,722 - INFO - Hash match: False
+2025-11-16 21:25:17,722 - INFO - === HEADER HASHING TESTS ===
+2025-11-16 21:25:17,722 - INFO - Calculating Merkle root from 1 transactions
+2025-11-16 21:25:17,722 - INFO - Calculated Merkle root: af175922c213a879f40bddfd86d36d50d8f6ff083aa59b2478154fe668d9e6f2
+2025-11-16 21:25:17,722 - INFO - Block header assembled successfully
+2025-11-16 21:25:17,722 - INFO - Header length: 80 bytes
+2025-11-16 21:25:17,722 - INFO - Test 1 - Normal header: ecab2d0ffcf0ae840bf1da92cfa0c154635984724439b9c96aba27041db2975e
+2025-11-16 21:25:17,722 - INFO - Calculating Merkle root from 1 transactions
+2025-11-16 21:25:17,722 - INFO - Calculated Merkle root: af175922c213a879f40bddfd86d36d50d8f6ff083aa59b2478154fe668d9e6f2
+2025-11-16 21:25:17,722 - INFO - Block header assembled successfully
+2025-11-16 21:25:17,722 - INFO - Header length: 80 bytes
+2025-11-16 21:25:17,722 - INFO - Test 2 - Modified nonce: 2a238c09c1f2e59d587b8e24df0b480823129d5a11e67355a01ba5e36727b77d
+2025-11-16 21:25:17,722 - INFO - Hash meets target: True
+2025-11-16 21:25:17,722 - INFO - Target: 00000000ffff0000000000000000000000000000000000000000000000000000
+2025-11-16 21:25:17,722 - INFO - Hash:   00000000845739341ad54be10ec8e8052554935b9dec5b0ab0e85d5b6eb285ec
+2025-11-16 21:25:17,722 - INFO - Analysis complete!
