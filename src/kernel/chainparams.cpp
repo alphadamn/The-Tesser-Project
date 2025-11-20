@@ -29,7 +29,7 @@
 #include <cstring>
 #include <type_traits>
 
-#include "../../../../../../opt/homebrew/include/boost/tuple/detail/tuple_basic.hpp"
+#include "boost/tuple/detail/tuple_basic.hpp"
 
 using namespace util::hex_literals;
 
