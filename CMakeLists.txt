@@ -41,12 +41,12 @@ get_directory_property(precious_variables CACHE_VARIABLES)
 #=============================
 # Project / Package metadata
 #=============================
-set(CLIENT_NAME "Bitcoin Core")
+set(CLIENT_NAME "Tesser Core")
 set(CLIENT_VERSION_MAJOR 30)
 set(CLIENT_VERSION_MINOR 99)
 set(CLIENT_VERSION_BUILD 0)
 set(CLIENT_VERSION_RC 0)
-set(CLIENT_VERSION_IS_RELEASE "false")
+set(CLIENT_VERSION_IS_RELEASE "true")
 set(COPYRIGHT_YEAR "2025")
 
 # During the enabling of the CXX and CXXOBJ languages, we modify
@@ -65,9 +65,9 @@ set(CMAKE_TRY_COMPILE_PLATFORM_VARIABLES
         CMAKE_CXX_LINK_EXECUTABLE
 )
 
-project(BitcoinCore
+project(TesserCore
         VERSION ${CLIENT_VERSION_MAJOR}.${CLIENT_VERSION_MINOR}.${CLIENT_VERSION_BUILD}
-        DESCRIPTION "Bitcoin client software"
+        DESCRIPTION "Tesser client software"
         HOMEPAGE_URL "https://bitcoincore.org/"
         LANGUAGES NONE
 )
