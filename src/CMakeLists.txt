@@ -155,21 +155,21 @@ if(ENABLE_WALLET)
   add_subdirectory(wallet)
 
   if(BUILD_WALLET_TOOL)
-    add_executable(bitcoin-wallet
+    add_executable(tesser-wallet
       bitcoin-wallet.cpp
       init/bitcoin-wallet.cpp
       wallet/wallettool.cpp
     )
-    add_windows_resources(bitcoin-wallet bitcoin-wallet-res.rc)
-    add_windows_application_manifest(bitcoin-wallet)
-    target_link_libraries(bitcoin-wallet
+    add_windows_resources(tesser-wallet tesser-wallet-res.rc)
+    add_windows_application_manifest(tesser-wallet)
+    target_link_libraries(tesser-wallet
       core_interface
       bitcoin_wallet
       bitcoin_common
       bitcoin_util
       Boost::headers
     )
-    install_binary_component(bitcoin-wallet HAS_MANPAGE)
+    install_binary_component(tesser-wallet HAS_MANPAGE)
   endif()
 endif()
 
@@ -289,40 +289,40 @@ target_link_libraries(bitcoin_node
 
 # Bitcoin wrapper executable that can call other executables.
 if(BUILD_BITCOIN_BIN)
-  add_executable(bitcoin bitcoin.cpp)
-  add_windows_resources(bitcoin bitcoin-res.rc)
-  add_windows_application_manifest(bitcoin)
-  target_link_libraries(bitcoin core_interface bitcoin_common bitcoin_util)
-  install_binary_component(bitcoin HAS_MANPAGE)
+  add_executable(tesser bitcoin.cpp)
+  add_windows_resources(tesser bitcoin-res.rc)
+  add_windows_application_manifest(tesser)
+  target_link_libraries(tesser core_interface bitcoin_common bitcoin_util)
+  install_binary_component(tesser HAS_MANPAGE)
 endif()
 
 # Bitcoin Core bitcoind.
 if(BUILD_DAEMON)
-  add_executable(bitcoind
+  add_executable(tesserd
     bitcoind.cpp
     init/bitcoind.cpp
   )
-  add_windows_resources(bitcoind bitcoind-res.rc)
-  add_windows_application_manifest(bitcoind)
-  target_link_libraries(bitcoind
+  add_windows_resources(tesserd bitcoind-res.rc)
+  add_windows_application_manifest(tesserd)
+  target_link_libraries(tesserd
     core_interface
     bitcoin_node
     $<TARGET_NAME_IF_EXISTS:bitcoin_wallet>
   )
-  install_binary_component(bitcoind HAS_MANPAGE)
+  install_binary_component(tesserd HAS_MANPAGE)
 endif()
 if(ENABLE_IPC AND BUILD_DAEMON)
-  add_executable(bitcoin-node
+  add_executable(tesser-node
     bitcoind.cpp
     init/bitcoin-node.cpp
   )
-  target_link_libraries(bitcoin-node
+  target_link_libraries(tesser-node
     core_interface
     bitcoin_node
     bitcoin_ipc
     $<TARGET_NAME_IF_EXISTS:bitcoin_wallet>
   )
-  install_binary_component(bitcoin-node INTERNAL)
+  install_binary_component(tesser-node INTERNAL)
 endif()
 
 if(ENABLE_IPC AND BUILD_TESTS)
@@ -355,10 +355,10 @@ target_link_libraries(bitcoin_cli
 
 # Bitcoin Core RPC client
 if(BUILD_CLI)
-  add_executable(bitcoin-cli bitcoin-cli.cpp)
-  add_windows_resources(bitcoin-cli bitcoin-cli-res.rc)
-  add_windows_application_manifest(bitcoin-cli)
-  target_link_libraries(bitcoin-cli
+  add_executable(tesser-cli bitcoin-cli.cpp)
+  add_windows_resources(tesser-cli bitcoin-cli-res.rc)
+  add_windows_application_manifest(tesser-cli)
+  target_link_libraries(tesser-cli
     core_interface
     bitcoin_cli
     bitcoin_common
@@ -366,34 +366,34 @@ if(BUILD_CLI)
     libevent::core
     libevent::extra
   )
-  install_binary_component(bitcoin-cli HAS_MANPAGE)
+  install_binary_component(tesser-cli HAS_MANPAGE)
 endif()
 
 
 if(BUILD_TX)
-  add_executable(bitcoin-tx bitcoin-tx.cpp)
-  add_windows_resources(bitcoin-tx bitcoin-tx-res.rc)
-  add_windows_application_manifest(bitcoin-tx)
-  target_link_libraries(bitcoin-tx
+  add_executable(tesser-tx bitcoin-tx.cpp)
+  add_windows_resources(tesser-tx bitcoin-tx-res.rc)
+  add_windows_application_manifest(tesser-tx)
+  target_link_libraries(tesser-tx
     core_interface
     bitcoin_common
     bitcoin_util
     univalue
   )
-  install_binary_component(bitcoin-tx HAS_MANPAGE)
+  install_binary_component(tesser-tx HAS_MANPAGE)
 endif()
 
 
 if(BUILD_UTIL)
-  add_executable(bitcoin-util bitcoin-util.cpp)
-  add_windows_resources(bitcoin-util bitcoin-util-res.rc)
-  add_windows_application_manifest(bitcoin-util)
-  target_link_libraries(bitcoin-util
+  add_executable(tesser-util bitcoin-util.cpp)
+  add_windows_resources(tesser-util bitcoin-util-res.rc)
+  add_windows_application_manifest(tesser-util)
+  target_link_libraries(tesser-util
     core_interface
     bitcoin_common
     bitcoin_util
   )
-  install_binary_component(bitcoin-util HAS_MANPAGE)
+  install_binary_component(tesser-util HAS_MANPAGE)
 endif()
 
 
@@ -408,25 +408,25 @@ if(BUILD_KERNEL_LIB)
     add_subdirectory(test/kernel)
   endif()
   if(BUILD_UTIL_CHAINSTATE)
-    add_executable(bitcoin-chainstate
+    add_executable(tesser-chainstate
       bitcoin-chainstate.cpp
     )
-    add_windows_application_manifest(bitcoin-chainstate)
+    add_windows_application_manifest(tesser-chainstate)
     # TODO: The `SKIP_BUILD_RPATH` property setting can be deleted
     #       in the future after reordering Guix script commands to
     #       perform binary checks after the installation step.
     # Relevant discussions:
     # - https://github.com/hebasto/bitcoin/pull/236#issuecomment-2183120953
     # - https://github.com/bitcoin/bitcoin/pull/30312#issuecomment-2191235833
-    set_target_properties(bitcoin-chainstate PROPERTIES
+    set_target_properties(tesser-chainstate PROPERTIES
       SKIP_BUILD_RPATH OFF
     )
-    target_link_libraries(bitcoin-chainstate
+    target_link_libraries(tesser-chainstate
       PRIVATE
         core_interface
         bitcoinkernel
     )
-    install_binary_component(bitcoin-chainstate INTERNAL)
+    install_binary_component(tesser-chainstate INTERNAL)
   endif()
 endif()
 
