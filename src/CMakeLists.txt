@@ -155,21 +155,21 @@ if(ENABLE_WALLET)
   add_subdirectory(wallet)
 
   if(BUILD_WALLET_TOOL)
-    add_executable(tesser-wallet
+    add_executable(bitcoin-wallet
       bitcoin-wallet.cpp
       init/bitcoin-wallet.cpp
       wallet/wallettool.cpp
     )
     add_windows_resources(bitcoin-wallet bitcoin-wallet-res.rc)
     add_windows_application_manifest(bitcoin-wallet)
-    target_link_libraries(tesser-wallet
+    target_link_libraries(bitcoin-wallet
       core_interface
       bitcoin_wallet
       bitcoin_common
       bitcoin_util
       Boost::headers
     )
-    install_binary_component(tesser-wallet HAS_MANPAGE)
+    install_binary_component(bitcoin-wallet HAS_MANPAGE)
   endif()
 endif()
 
@@ -289,40 +289,40 @@ target_link_libraries(bitcoin_node
 
 # Bitcoin wrapper executable that can call other executables.
 if(BUILD_BITCOIN_BIN)
-  add_executable(tesser bitcoin.cpp)
+  add_executable(bitcoin bitcoin.cpp)
   add_windows_resources(bitcoin bitcoin-res.rc)
   add_windows_application_manifest(bitcoin)
-  target_link_libraries(tesser core_interface bitcoin_common bitcoin_util)
-  install_binary_component(tesser HAS_MANPAGE)
+  target_link_libraries(bitcoin core_interface bitcoin_common bitcoin_util)
+  install_binary_component(bitcoin HAS_MANPAGE)
 endif()
 
 # Bitcoin Core bitcoind.
 if(BUILD_DAEMON)
-  add_executable(tesserd
+  add_executable(bitcoind
     bitcoind.cpp
     init/bitcoind.cpp
   )
   add_windows_resources(bitcoind bitcoind-res.rc)
   add_windows_application_manifest(bitcoind)
-  target_link_libraries(tesserd
+  target_link_libraries(bitcoind
     core_interface
     bitcoin_node
     $<TARGET_NAME_IF_EXISTS:bitcoin_wallet>
   )
-  install_binary_component(tesserd HAS_MANPAGE)
+  install_binary_component(bitcoind HAS_MANPAGE)
 endif()
 if(ENABLE_IPC AND BUILD_DAEMON)
-  add_executable(tesser-node
+  add_executable(bitcoin-node
     bitcoind.cpp
     init/bitcoin-node.cpp
   )
-  target_link_libraries(tesser-node
+  target_link_libraries(bitcoin-node
     core_interface
     bitcoin_node
     bitcoin_ipc
     $<TARGET_NAME_IF_EXISTS:bitcoin_wallet>
   )
-  install_binary_component(tesser-node INTERNAL)
+  install_binary_component(bitcoin-node INTERNAL)
 endif()
 
 if(ENABLE_IPC AND BUILD_TESTS)
@@ -355,10 +355,10 @@ target_link_libraries(bitcoin_cli
 
 # Bitcoin Core RPC client
 if(BUILD_CLI)
-  add_executable(tesser-cli bitcoin-cli.cpp)
+  add_executable(bitcoin-cli bitcoin-cli.cpp)
   add_windows_resources(bitcoin-cli bitcoin-cli-res.rc)
   add_windows_application_manifest(bitcoin-cli)
-  target_link_libraries(tesser-cli
+  target_link_libraries(bitcoin-cli
     core_interface
     bitcoin_cli
     bitcoin_common
@@ -366,34 +366,34 @@ if(BUILD_CLI)
     libevent::core
     libevent::extra
   )
-  install_binary_component(tesser-cli HAS_MANPAGE)
+  install_binary_component(bitcoin-cli HAS_MANPAGE)
 endif()
 
 
 if(BUILD_TX)
-  add_executable(tesser-tx bitcoin-tx.cpp)
+  add_executable(bitcoin-tx bitcoin-tx.cpp)
   add_windows_resources(bitcoin-tx bitcoin-tx-res.rc)
   add_windows_application_manifest(bitcoin-tx)
-  target_link_libraries(tesser-tx
+  target_link_libraries(bitcoin-tx
     core_interface
     bitcoin_common
     bitcoin_util
     univalue
   )
-  install_binary_component(tesser-tx HAS_MANPAGE)
+  install_binary_component(bitcoin-tx HAS_MANPAGE)
 endif()
 
 
 if(BUILD_UTIL)
-  add_executable(tesser-util bitcoin-util.cpp)
+  add_executable(bitcoin-util bitcoin-util.cpp)
   add_windows_resources(bitcoin-util bitcoin-util-res.rc)
   add_windows_application_manifest(bitcoin-util)
-  target_link_libraries(tesser-util
+  target_link_libraries(bitcoin-util
     core_interface
     bitcoin_common
     bitcoin_util
   )
-  install_binary_component(tesser-util HAS_MANPAGE)
+  install_binary_component(bitcoin-util HAS_MANPAGE)
 endif()
 
 
@@ -408,7 +408,7 @@ if(BUILD_KERNEL_LIB)
     add_subdirectory(test/kernel)
   endif()
   if(BUILD_UTIL_CHAINSTATE)
-    add_executable(tesser-chainstate
+    add_executable(bitcoin-chainstate
       bitcoin-chainstate.cpp
     )
     add_windows_application_manifest(bitcoin-chainstate)

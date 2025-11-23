@@ -247,39 +247,39 @@ endif()
 
 add_subdirectory(locale)
 
-add_executable(tesser-qt
+add_executable(bitcoin-qt
   main.cpp
   ../init/bitcoin-qt.cpp
 )
 
-add_windows_resources(tesser-qt res/bitcoin-qt-res.rc)
+add_windows_resources(bitcoin-qt res/bitcoin-qt-res.rc)
 add_windows_application_manifest(bitcoin-qt)
 
-target_link_libraries(tesser-qt
+target_link_libraries(bitcoin-qt
   core_interface
   bitcoinqt
   bitcoin_node
 )
 
 import_plugins(bitcoin-qt)
-install_binary_component(tesser-qt HAS_MANPAGE)
+install_binary_component(bitcoin-qt HAS_MANPAGE)
 if(WIN32)
   set_target_properties(bitcoin-qt PROPERTIES WIN32_EXECUTABLE TRUE)
 endif()
 
 if(ENABLE_IPC)
-  add_executable(tesser-gui
+  add_executable(bitcoin-gui
     main.cpp
     ../init/bitcoin-gui.cpp
   )
-  target_link_libraries(tesser-gui
+  target_link_libraries(bitcoin-gui
     core_interface
     bitcoinqt
     bitcoin_node
     bitcoin_ipc
   )
-  import_plugins(tesser-gui)
-  install_binary_component(tesser-gui INTERNAL)
+  import_plugins(bitcoin-gui)
+  install_binary_component(bitcoin-gui INTERNAL)
   if(WIN32)
     set_target_properties(bitcoin-gui PROPERTIES WIN32_EXECUTABLE TRUE)
   endif()
