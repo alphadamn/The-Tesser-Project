@@ -252,7 +252,7 @@ add_executable(tesser-qt
   ../init/bitcoin-qt.cpp
 )
 
-add_windows_resources(tesser-qt res/tesser-qt-res.rc)
+add_windows_resources(tesser-qt res/bitcoin-qt-res.rc)
 add_windows_application_manifest(tesser-qt)
 
 target_link_libraries(tesser-qt
