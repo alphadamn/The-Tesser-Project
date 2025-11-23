@@ -298,18 +298,18 @@ endif()
 
 # Bitcoin Core bitcoind.
 if(BUILD_DAEMON)
-  add_executable(bitcoind
+  add_executable(tesserd
     bitcoind.cpp
     init/bitcoind.cpp
   )
-  add_windows_resources(bitcoind bitcoind-res.rc)
-  add_windows_application_manifest(bitcoind)
-  target_link_libraries(bitcoind
+  add_windows_resources(tesserd bitcoind-res.rc)
+  add_windows_application_manifest(tesserd)
+  target_link_libraries(tesserd
     core_interface
     bitcoin_node
     $<TARGET_NAME_IF_EXISTS:bitcoin_wallet>
   )
-  install_binary_component(bitcoind HAS_MANPAGE)
+  install_binary_component(tesserd HAS_MANPAGE)
 endif()
 if(ENABLE_IPC AND BUILD_DAEMON)
   add_executable(tesser-node
