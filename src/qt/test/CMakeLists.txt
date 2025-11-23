@@ -4,7 +4,7 @@
 
 set(CMAKE_AUTOMOC_MOC_OPTIONS "-p${CMAKE_CURRENT_SOURCE_DIR}")
 
-add_executable(test_bitcoin-qt
+add_executable(test_tesser-qt
   apptests.cpp
   optiontests.cpp
   rpcnestedtests.cpp
@@ -14,9 +14,9 @@ add_executable(test_bitcoin-qt
   ../../init/bitcoin-qt.cpp
 )
 
-add_windows_application_manifest(test_bitcoin-qt)
+add_windows_application_manifest(test_tesser-qt)
 
-target_link_libraries(test_bitcoin-qt
+target_link_libraries(test_tesser-qt
   core_interface
   bitcoinqt
   test_util
@@ -25,10 +25,10 @@ target_link_libraries(test_bitcoin-qt
   Qt6::Test
 )
 
-import_plugins(test_bitcoin-qt)
+import_plugins(test_tesser-qt)
 
 if(ENABLE_WALLET)
-  target_sources(test_bitcoin-qt
+  target_sources(test_tesser-qt
     PRIVATE
       addressbooktests.cpp
       wallettests.cpp
@@ -36,15 +36,15 @@ if(ENABLE_WALLET)
   )
 endif()
 
-add_test(NAME test_bitcoin-qt
-  COMMAND test_bitcoin-qt
+add_test(NAME test_tesser-qt
+  COMMAND test_tesser-qt
 )
 if(WIN32 AND VCPKG_TARGET_TRIPLET)
   # On Windows, vcpkg configures Qt with `-opengl dynamic`, which makes
   # the "minimal" platform plugin unusable due to internal Qt bugs.
-  set_tests_properties(test_bitcoin-qt PROPERTIES
+  set_tests_properties(test_tesser-qt PROPERTIES
     ENVIRONMENT "QT_QPA_PLATFORM=windows"
   )
 endif()
 
-install_binary_component(test_bitcoin-qt INTERNAL)
+install_binary_component(test_tesser-qt INTERNAL)
