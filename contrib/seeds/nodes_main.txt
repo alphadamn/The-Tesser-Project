@@ -1,4 +1,4 @@
 148.100.76.237:2013
 150.158.167.44:13315
-yrko5ijbghivon6frc35kdpajk7uc7iqwrtc7gbuo2dh3tlknjuducid.onion:2013
-lnaipdrcpsv6pte66vddttvsv2x3i5v57glcqhtvvmeerqpm3morbtyd.onion:2013
+ugrq63c7dajsk67qjwd3tfg7qcml3gggdli7dwkhkqxalkie43ncy2ad.onion:2013
+64al3zsr44ciy3qz54owodg5eur5s37n7ynepba6rnr6augt3e75f7qd.onion:2013
