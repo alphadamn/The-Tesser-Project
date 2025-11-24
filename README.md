@@ -1,6 +1,19 @@
 # The Tesser Project
 D0nat10ns are welcome at: tr1pzh9wxevfph62r6jmk6vnz9y9z3sayzrwc0l2dvqrc63vdkh8y2pskqh243 or <a href="https://www.buymeacoffee.com/the.tesser.project"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=the.tesser.project&button_colour=FFDD00&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=ffffff" /></a>
 
+## Bug Bounty
+Bugs submitted to the email Oscar.Liu@student.isb.cn or lzh1117@icloud.com are given a incentive of 10000-200000 Tessers respectively, corresponding to the bug submitted. 
+### How to
+If you find a bug, send an email to one of the two addresses in the format below: 
+```
+Name: {Your Perfered Name} ({put your github username here inside parentheses })
+Bug Description: {Explain what your bug does, its potential, rate the severity of the bug yourself (note that this would not affect the resulting incentive), HOW TO REPRODUCE (must have, BUG MUST BE REPRODUCIBLE, OR ELSE WOULD BE MARKED INVALID)}
+Time Found: {YYYY/MM/DD}
+Address: {Your tesser address for receiving the rewards}
+```
+### How long? 
+Since we would need to reproduce the bug, note that the reward might take hours or weeks to arrive. 
+
 ## Installation
 ### Building from source
 ```
