@@ -1,5 +1,15 @@
 # The Tesser Project
-D0nat10ns are welcome at: tr1qa5u8gjka4pkjhc9zxuxtj6u3fz36qt89vdpjkk or <a href="https://www.buymeacoffee.com/the.tesser.project"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=the.tesser.project&button_colour=FFDD00&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=ffffff" /></a>
+Donations are welcome at: `tr1qa5u8gjka4pkjhc9zxuzxtj6u3fz36qt89vdpjkk` or via Buy Me a Coffee.
+
+If the first link doesn't work, try the second:
+
+<a href="https://www.buymeacoffee.com/the.tesser.project" target="_blank">
+  <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=the.tesser.project&button_colour=FFDD00&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=ffffff" />
+</a>
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Support%20Me-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/tesserproject)
+
+
 
 ## Bug Bounty
 Bugs submitted to the email Oscar.Liu@student.isb.cn or lzh1117@icloud.com are given a incentive of 10000-200000 Tessers respectively, corresponding to the bug submitted. 
