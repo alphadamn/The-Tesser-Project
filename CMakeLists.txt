@@ -10,6 +10,7 @@ cmake_minimum_required(VERSION 3.22)
 
 ### cross compile args
 # set(CMAKE_SYSTEM_NAME Windows)
+# set(CMAKE_SYSTEM_NAME Windows)
 # set(CMAKE_SYSTEM_PROCESSOR x86_64)
 # 
 # set(CMAKE_C_COMPILER x86_64-w64-mingw32-gcc)
