@@ -33,10 +33,13 @@ brew install tor
 ```
 ##### On other platforms
 It's basicly the same packages, but for linux it's lib...-dev for some. 
-#### Configuring/Building
+#### Configuring
 To configure the build: `cmake -DCMAKE_BUILD_TYPE=Debug -DBUILD_GUI=ON -S {put your project path here (without brackets) eg. /Users/me/Desktop/tesser} -B {put your project path here (without brackets) eg. /Users/me/Desktop/tesser}/cmake-build-debug`
+#### Build
 To build: `cmake --build {put your project path here (without brackets) eg. /Users/me/Desktop/tesser}/cmake-build-debug --target all -j {how much cores your CPU has, eg. 8}`
+
 After the command returns, you should be able to see your binaries located at cmake-build-debug/bin
+
 There might be a case that your binaries are named bitcoin... instead tesser..., if so, just simply rename them with `mv bitcoin... tesser...` for each of them. 
 
 ### Download from releases
