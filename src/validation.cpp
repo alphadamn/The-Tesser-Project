@@ -1,7 +1,4 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-present The Bitcoin Core developers
-// Distributed under the MIT software license, see the accompanying
-// file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <bitcoin-build-config.h> // IWYU pragma: keep
 
@@ -1996,25 +1993,25 @@ bool ChainstateManager::IsInitialBlockDownload() const
 {
     // ibd
     // Optimization: pre-test latch before taking the lock.
-    if (m_cached_finished_ibd.load(std::memory_order_relaxed))
-        return false;
-
-    LOCK(cs_main);
-    if (m_cached_finished_ibd.load(std::memory_order_relaxed))
-        return false;
-    if (m_blockman.LoadingBlocks()) {
-        return true;
-    }
-    CChain& chain{ActiveChain()};
-    if (chain.Tip() == nullptr) {
-        return true;
-    }
-    if (chain.Tip()->nChainWork < MinimumChainWork()) {
-        return true;
-    }
-    if (chain.Tip()->Time() < Now<NodeSeconds>() - m_options.max_tip_age) {
-        return true;
-    }
+    // if (m_cached_finished_ibd.load(std::memory_order_relaxed))
+    //     return false;
+    //
+    // LOCK(cs_main);
+    // if (m_cached_finished_ibd.load(std::memory_order_relaxed))
+    //     return false;
+    // if (m_blockman.LoadingBlocks()) {
+    //     return true;
+    // }
+    // CChain& chain{ActiveChain()};
+    // if (chain.Tip() == nullptr) {
+    //     return true;
+    // }
+    // if (chain.Tip()->nChainWork < MinimumChainWork()) {
+    //     return true;
+    // }
+    // if (chain.Tip()->Time() < Now<NodeSeconds>() - m_options.max_tip_age) {
+    //     return true;
+    // }
     LogInfo("Leaving InitialBlockDownload (latching to false)");
     m_cached_finished_ibd.store(true, std::memory_order_relaxed);
     return false;

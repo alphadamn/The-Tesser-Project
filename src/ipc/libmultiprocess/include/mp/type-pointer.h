@@ -1,7 +1,3 @@
-// Copyright (c) The Bitcoin Core developers
-// Distributed under the MIT software license, see the accompanying
-// file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
 #ifndef MP_PROXY_TYPE_POINTER_H
 #define MP_PROXY_TYPE_POINTER_H
 

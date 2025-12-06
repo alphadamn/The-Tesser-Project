@@ -1,7 +1,3 @@
-// Copyright (c) 2017-present The Bitcoin Core developers
-// Distributed under the MIT software license, see the accompanying
-// file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
 #include <qt/test/addressbooktests.h>
 #include <qt/test/util.h>
 #include <test/util/setup_common.h>

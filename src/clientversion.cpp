@@ -1,7 +1,3 @@
-// Copyright (c) 2012-2022 The Bitcoin Core developers
-// Distributed under the MIT software license, see the accompanying
-// file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
 #include <bitcoin-build-config.h> // IWYU pragma: keep
 
 #include <clientversion.h>
@@ -76,9 +72,9 @@ std::string CopyrightHolders(const std::string& strPrefix)
     std::string strCopyrightHolders = strPrefix + copyright_devs;
 
     // Make sure Bitcoin Core copyright is not removed by accident
-    if (copyright_devs.find("Bitcoin Core") == std::string::npos) {
-        strCopyrightHolders += "\n" + strPrefix + "The Bitcoin Core developers";
-    }
+    // if (copyright_devs.find("Bitcoin Core") == std::string::npos) {
+    //     strCopyrightHolders += "\n" + strPrefix + "The Bitcoin Core developers";
+    // }
     return strCopyrightHolders;
 }
 
@@ -96,7 +92,7 @@ std::string LicenseInfo()
            strprintf(_("The source code is available from %s."), URL_SOURCE_CODE).translated +
            "\n" +
            "\n" +
-           _("This is experimental software.") + "\n" +
+           // _("This is experimental software.") + "\n" +
            strprintf(_("Distributed under the MIT software license, see the accompanying file %s or %s"), "COPYING", "<https://opensource.org/license/MIT>").translated +
            "\n";
 }

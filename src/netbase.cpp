@@ -933,6 +933,8 @@ bool IsBadPort(uint16_t port)
     case 6668:  // Alternate IRC
     case 6669:  // Alternate IRC
     case 6697:  // IRC + TLS
+    case 8333: // Bitcoin
+    case 8332: // Bitcoin RPC
     case 10080: // Amanda
     case 27017: // MongoDB
         return true;

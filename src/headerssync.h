@@ -1,7 +1,3 @@
-// Copyright (c) 2022-present The Bitcoin Core developers
-// Distributed under the MIT software license, see the accompanying
-// file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
 #ifndef BITCOIN_HEADERSSYNC_H
 #define BITCOIN_HEADERSSYNC_H
 

@@ -54,7 +54,7 @@
         <translation type="unfinished">V&amp;alitse</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
+        <source>These are your Tesser addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Nämä ovat Bitcoin-osoitteesi maksujen vastaanottoa varten. Käytä painiketta "Luo uusi vastaanotto-osoite" vastaanottovälilehdessä luodaksesi uusia osoitteita.
 Allekirjoitus on mahdollista vain 'legacy'-tyyppisillä osoitteilla.</translation>
