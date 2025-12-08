@@ -3,7 +3,6 @@
 # file COPYING or https://opensource.org/license/mit/.
 
 include(AddWindowsResources)
-#include_directories("${PROJECT_SOURCE_DIR}/src/univalue/include")
 
 configure_file(${PROJECT_SOURCE_DIR}/cmake/bitcoin-build-config.h.in bitcoin-build-config.h USE_SOURCE_PERMISSIONS @ONLY)
 include_directories(${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
@@ -157,11 +156,11 @@ if(ENABLE_WALLET)
 
   if(BUILD_WALLET_TOOL)
     add_executable(tesser-wallet
-            tesser-wallet.cpp
-      init/tesser-wallet.cpp
+      bitcoin-wallet.cpp
+      init/bitcoin-wallet.cpp
       wallet/wallettool.cpp
     )
-    add_windows_resources(tesser-wallet tesser-wallet-res.rc)
+    add_windows_resources(tesser-wallet bitcoin-wallet-res.rc)
     add_windows_application_manifest(tesser-wallet)
     target_link_libraries(tesser-wallet
       core_interface
@@ -289,9 +288,9 @@ target_link_libraries(bitcoin_node
 )
 
 # Bitcoin wrapper executable that can call other executables.
-if(BUILD_TESSER_BIN)
-  add_executable(tesser tesser.cpp)
-  add_windows_resources(tesser tesser-res.rc)
+if(BUILD_BITCOIN_BIN)
+  add_executable(tesser bitcoin.cpp)
+  add_windows_resources(tesser bitcoin-res.rc)
   add_windows_application_manifest(tesser)
   target_link_libraries(tesser core_interface bitcoin_common bitcoin_util)
   install_binary_component(tesser HAS_MANPAGE)
@@ -300,10 +299,10 @@ endif()
 # Bitcoin Core bitcoind.
 if(BUILD_DAEMON)
   add_executable(tesserd
-          tesserd.cpp
-    init/tesserd.cpp
+    bitcoind.cpp
+    init/bitcoind.cpp
   )
-  add_windows_resources(tesserd tesserd-res.rc)
+  add_windows_resources(tesserd bitcoind-res.rc)
   add_windows_application_manifest(tesserd)
   target_link_libraries(tesserd
     core_interface
@@ -314,8 +313,8 @@ if(BUILD_DAEMON)
 endif()
 if(ENABLE_IPC AND BUILD_DAEMON)
   add_executable(tesser-node
-          tesserd.cpp
-    init/tesser-node.cpp
+    bitcoind.cpp
+    init/bitcoin-node.cpp
   )
   target_link_libraries(tesser-node
     core_interface
@@ -361,6 +360,7 @@ if(BUILD_CLI)
   add_windows_application_manifest(tesser-cli)
   target_link_libraries(tesser-cli
     core_interface
+    bitcoin_cli
     bitcoin_common
     bitcoin_util
     libevent::core
@@ -371,8 +371,8 @@ endif()
 
 
 if(BUILD_TX)
-  add_executable(tesser-tx tesser-tx.cpp)
-  add_windows_resources(tesser-tx tesser-tx-res.rc)
+  add_executable(tesser-tx bitcoin-tx.cpp)
+  add_windows_resources(tesser-tx bitcoin-tx-res.rc)
   add_windows_application_manifest(tesser-tx)
   target_link_libraries(tesser-tx
     core_interface
@@ -385,8 +385,8 @@ endif()
 
 
 if(BUILD_UTIL)
-  add_executable(tesser-util tesser-util.cpp)
-  add_windows_resources(tesser-util tesser-util-res.rc)
+  add_executable(tesser-util bitcoin-util.cpp)
+  add_windows_resources(tesser-util bitcoin-util-res.rc)
   add_windows_application_manifest(tesser-util)
   target_link_libraries(tesser-util
     core_interface
@@ -409,7 +409,7 @@ if(BUILD_KERNEL_LIB)
   endif()
   if(BUILD_UTIL_CHAINSTATE)
     add_executable(tesser-chainstate
-            tesser-chainstate.cpp
+      bitcoin-chainstate.cpp
     )
     add_windows_application_manifest(tesser-chainstate)
     # TODO: The `SKIP_BUILD_RPATH` property setting can be deleted
