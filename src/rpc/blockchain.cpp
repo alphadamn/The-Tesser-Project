@@ -1,7 +1,4 @@
 // Copyright (c) 2010 Satoshi Nakamoto
-// Copyright (c) 2009-present The Bitcoin Core developers
-// Distributed under the MIT software license, see the accompanying
-// file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <rpc/blockchain.h>
 
@@ -38,6 +35,7 @@
 #include <rpc/util.h>
 #include <script/descriptor.h>
 #include <serialize.h>
+#include <string>
 #include <streams.h>
 #include <sync.h>
 #include <tinyformat.h>
@@ -61,7 +59,6 @@
 #include <memory>
 #include <mutex>
 #include <optional>
-#include <string>
 #include <string_view>
 #include <vector>
 

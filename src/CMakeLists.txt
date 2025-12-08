@@ -288,7 +288,7 @@ target_link_libraries(bitcoin_node
 )
 
 # Bitcoin wrapper executable that can call other executables.
-if(BUILD_BITCOIN_BIN)
+if(BUILD_TESSER_BIN)
   add_executable(tesser bitcoin.cpp)
   add_windows_resources(tesser bitcoin-res.rc)
   add_windows_application_manifest(tesser)
