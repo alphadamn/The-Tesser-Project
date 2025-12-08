@@ -249,7 +249,7 @@ add_subdirectory(locale)
 
 add_executable(tesser-qt
   main.cpp
-  ../init/bitcoin-qt.cpp
+        ../init/tesser-qt.cpp
 )
 
 add_windows_resources(tesser-qt res/bitcoin-qt-res.rc)
@@ -270,7 +270,7 @@ endif()
 if(ENABLE_IPC)
   add_executable(tesser-gui
     main.cpp
-    ../init/bitcoin-gui.cpp
+          ../init/tesser-gui.cpp
   )
   target_link_libraries(tesser-gui
     core_interface

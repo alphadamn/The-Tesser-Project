@@ -1,5 +1,3 @@
-
-
 #include <bitcoin-build-config.h> // IWYU pragma: keep
 
 #include <chainparams.h>

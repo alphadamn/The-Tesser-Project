@@ -286,7 +286,7 @@ Signing is only possible with addresses of the type &apos;legacy&apos;.</source>
       </trans-unit>
     </group>
   </body></file>
-  <file original="../bitcoin.cpp" datatype="cpp" source-language="en"><body>
+  <file original="../tesser.cpp" datatype="cpp" source-language="en"><body>
     <group restype="x-trolltech-linguist-context" resname="BitcoinApplication">
       <trans-unit id="_msg63">
         <source xml:space="preserve">Settings file %1 might be corrupt or invalid.</source>

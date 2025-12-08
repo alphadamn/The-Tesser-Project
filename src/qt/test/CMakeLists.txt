@@ -11,7 +11,7 @@ add_executable(test_tesser-qt
   test_main.cpp
   uritests.cpp
   util.cpp
-  ../../init/bitcoin-qt.cpp
+        ../../init/tesser-qt.cpp
 )
 
 add_windows_application_manifest(test_tesser-qt)
