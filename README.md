@@ -3,17 +3,27 @@ D0nat10ns are welcome at: tr1qa5u8gjka4pkjhc9zxuxtj6u3fz36qt89vdpjkk or [![Buy M
 
 
 ## Bug Bounty
-Bugs submitted to the email Oscar.Liu@student.isb.cn or lzh1117@icloud.com are given a incentive of 10000-200000 Tessers respectively, corresponding to the bug submitted. 
+Bugs submitted to the email Oscar.Liu@student.isb.cn or luca1zrussell@proton.me are given a incentive of 10000-200000 Tessers respectively, corresponding to the bug submitted. 
+
 ### How to
-If you find a bug, send an email to one of the two addresses in the format below: 
+If you find a bug, send an PGP-encrypted email to one of the two addresses in the format below: 
 ```
 Name: {Your Perfered Name} ({put your github username here inside parentheses })
 Bug Description: {Explain what your bug does, its potential, rate the severity of the bug yourself (note that this would not affect the resulting incentive), HOW TO REPRODUCE (must have, BUG MUST BE REPRODUCIBLE, OR ELSE WOULD BE MARKED INVALID)}
 Time Found: {YYYY/MM/DD}
 Address: {Your tesser address for receiving the rewards}
 ```
+
 ### How long? 
 Since we would need to reproduce the bug, note that the reward might take hours or weeks to arrive. 
+
+### PGP Keys
+| Name | Fingerprint |
+|------|-------------|
+| Oscar Liu | 3DEF 68CB 81C5 B614 F78A B2D7 6FA8 CD36 EEB2 5D36 |
+| Luca Russell | B1AC 17BA F545 F4A8 EACD E792 74F8 5F1D 1C85 F054 |
+
+You can import a key by running the following command with that individual’s fingerprint: `gpg --keyserver hkps://keys.openpgp.org --recv-keys "<fingerprint>"` Ensure that you put quotes around fingerprints containing spaces.
 
 ## Installation
 ### Building from source
