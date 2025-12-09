@@ -9,13 +9,13 @@ import tempfile
 import argparse
 
 BINARIES = [
-'bin/bitcoin',
-'bin/bitcoind',
-'bin/bitcoin-cli',
-'bin/bitcoin-tx',
-'bin/bitcoin-wallet',
-'bin/bitcoin-util',
-'bin/bitcoin-qt',
+'bin/tesser',
+'bin/tesserd',
+'bin/tesser-cli',
+'bin/tesser-tx',
+'bin/tesser-wallet',
+'bin/tesser-util',
+'bin/tesser-qt',
 ]
 
 parser = argparse.ArgumentParser(
@@ -41,7 +41,7 @@ if not topdir:
     topdir = r.stdout.rstrip()
 
 # Get input and output directories.
-builddir = os.getenv('BUILDDIR', os.path.join(topdir, 'build'))
+builddir = os.getenv('BUILDDIR', os.path.join(topdir, 'cmake-build-debug'))
 mandir = os.getenv('MANDIR', os.path.join(topdir, 'doc/man'))
 
 # Verify that all the required binaries are usable, and extract copyright
@@ -61,8 +61,13 @@ for relpath in BINARIES:
     # take first line (which must contain version)
     verstr = r.stdout.splitlines()[0]
     # last word of line is the actual version e.g. v22.99.0-5c6b3d5b3508
-    verstr = verstr.split()[-1]
-    assert verstr.startswith('v')
+    try:
+        assert verstr.split()[-1].startswith('v')
+        verstr = verstr.split()[-1]
+    except AssertionError:
+        verstr = verstr.split()[-2]
+        assert verstr.startswith('v')
+    print(verstr)
     # remaining lines are copyright
     copyright = r.stdout.split('\n')[1:]
     assert copyright[0].startswith('Copyright (C)')

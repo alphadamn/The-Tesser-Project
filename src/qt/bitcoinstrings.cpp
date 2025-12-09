@@ -71,7 +71,7 @@ QT_TRANSLATE_NOOP("tesser-core", "Error: Dumpfile checksum does not match. Compu
 QT_TRANSLATE_NOOP("tesser-core", "Error: Dumpfile format record is incorrect. Got \"%s\", expected \"format\"."),
 QT_TRANSLATE_NOOP("tesser-core", "Error: Dumpfile identifier record is incorrect. Got \"%s\", expected \"%s\"."),
 QT_TRANSLATE_NOOP("tesser-core", "Error: Dumpfile specifies an unsupported database format (%s). Only sqlite database dumps are supported"),
-QT_TRANSLATE_NOOP("tesser-core", "Error: Dumpfile version is not supported. This version of bitcoin-wallet only supports version 1 dumpfiles. Got dumpfile with version %s"),
+QT_TRANSLATE_NOOP("tesser-core", "Error: Dumpfile version is not supported. This version of tesser-wallet only supports version 1 dumpfiles. Got dumpfile with version %s"),
 QT_TRANSLATE_NOOP("tesser-core", "Error: Duplicate descriptors created during migration. Your wallet may be corrupted."),
 QT_TRANSLATE_NOOP("tesser-core", "Error: Failed to create new watchonly wallet"),
 QT_TRANSLATE_NOOP("tesser-core", "Error: Got key that was not hex: %s"),
