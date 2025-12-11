@@ -26,7 +26,7 @@
         <translation type="unfinished">حذف</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
+        <source>These are your Tesser addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">هذه هي العناوين الخاصة بها بك. استخدم زر "إنشاء عنوان استقبال جديد" في علامة استلام البريد الإلكتروني عناوين جديدة.التوقيع ممكن فقط مع عناوين نوع "إرث" .</translation>
     </message>
@@ -215,7 +215,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
 </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>TesserGUI</name>
     <message>
         <source>&amp;Overview</source>
         <translation type="unfinished">&amp;نظرة عامة</translation>
@@ -278,7 +278,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">%1 اتصال نشط بشبكة البيتكوين</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
+        <source>Send coins to a Tesser address</source>
         <translation type="unfinished">ارسل عملات الى عنوان بيتكوين</translation>
     </message>
     <message>

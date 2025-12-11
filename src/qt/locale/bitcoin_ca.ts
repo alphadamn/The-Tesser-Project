@@ -58,8 +58,8 @@
         <translation type="unfinished">&amp;Tria</translation>
     </message>
     <message>
-        <source>These are your Bitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Aquestes són les vostres adreces de Bitcoin per enviar pagaments. Sempre reviseu l'import i l'adreça del destinatari abans de transferir monedes.</translation>
+        <source>These are your Tesser addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">Aquestes són les vostres adreces de Tesser per enviar pagaments. Sempre reviseu l'import i l'adreça del destinatari abans de transferir monedes.</translation>
     </message>
     <message>
         <source>These are your Bitcoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.

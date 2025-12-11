@@ -427,7 +427,7 @@ Allekirjoitus on mahdollista vain 'legacy'-tyyppisillä osoitteilla.</translatio
     </message>
 </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>TesserGUI</name>
     <message>
         <source>&amp;Overview</source>
         <translation type="unfinished">&amp;Yleisnäkymä</translation>

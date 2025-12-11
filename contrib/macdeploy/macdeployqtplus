@@ -26,7 +26,7 @@ from typing import Optional
 
 class FrameworkInfo(object):
     def __init__(self):
-        self.frameworkDirectory = ""
+        self.frameworkDirectory = "/opt/homebrew/opt/qtbase/" # for homebrew qt6 support. you need to change this to your own
         self.frameworkName = ""
         self.frameworkPath = ""
         self.binaryDirectory = ""
@@ -154,20 +154,23 @@ class ApplicationBundleInfo(object):
 
 class DeploymentInfo(object):
     def __init__(self):
-        self.qtPath = None
-        self.pluginPath = None
+        self.qtPath = "/opt/homebrew/opt/qtbase"# for homebrew qt6 support. you need to change this to your own
+        self.pluginPath = "/opt/homebrew/opt/qtbase/share/qt/plugins"# for homebrew qt6 support. you need to change this to your own
         self.deployedFrameworks = []
 
     def detectQtPath(self, frameworkDirectory: str):
         parentDir = os.path.dirname(frameworkDirectory)
-        if os.path.exists(os.path.join(parentDir, "share", "qt", "translations")):
+        if os.path.exists(os.path.join(parentDir, "share", "qt", "plugins")):
             self.qtPath = parentDir
         else:
             self.qtPath = os.getenv("QTDIR", None)
+        print(self.qtPath,os.getenv("QTDIR",None))
 
         if self.qtPath is not None:
-            pluginPath = os.path.join(self.qtPath, "share", "qt", "plugins")
+            # pluginPath = os.path.join(self.qtPath, "share", "qt", "plugins")
+            pluginPath = "/opt/homebrew/opt/qtbase/share/qt/plugins"# for homebrew qt6 support. you need to change this to your own
             if os.path.exists(pluginPath):
+                print('exists')
                 self.pluginPath = pluginPath
 
     def usesFramework(self, name: str) -> bool:
@@ -338,8 +341,9 @@ def deployFrameworksForAppBundle(applicationBundle: ApplicationBundleInfo, strip
     else:
         return deployFrameworks(frameworks, applicationBundle.path, applicationBundle.binaryPath, strip, verbose)
 
-def deployPlugins(appBundleInfo: ApplicationBundleInfo, deploymentInfo: DeploymentInfo, strip: bool, verbose: int):
+def deployPlugins(appBundleInfo: ApplicationBundleInfo, deploymentInfo: DeploymentInfo, strip: bool, verbose: int = 1):
     plugins = []
+    print(deploymentInfo.pluginPath)
     if deploymentInfo.pluginPath is None:
         return
     for dirpath, dirnames, filenames in os.walk(deploymentInfo.pluginPath):
@@ -350,23 +354,27 @@ def deployPlugins(appBundleInfo: ApplicationBundleInfo, deploymentInfo: Deployme
 
         for pluginName in filenames:
             pluginPath = os.path.join(pluginDirectory, pluginName)
+            print(pluginPath,pluginName)
 
             if pluginName.split('.')[0] not in ['libqminimal', 'libqcocoa', 'libqmacstyle']:
+                print(pluginName)
                 continue
 
             plugins.append((pluginDirectory, pluginName))
-    
+    print(plugins,1)
     for pluginDirectory, pluginName in plugins:
         print("Processing plugin", os.path.join(pluginDirectory, pluginName), "...")
         
         sourcePath = os.path.join(deploymentInfo.pluginPath, pluginDirectory, pluginName)
         destinationDirectory = os.path.join(appBundleInfo.pluginPath, pluginDirectory)
+        print(pluginDirectory, appBundleInfo.pluginPath)
         if not os.path.exists(destinationDirectory):
             os.makedirs(destinationDirectory)
         
         destinationPath = os.path.join(destinationDirectory, pluginName)
+        print(destinationPath)
         shutil.copy2(sourcePath, destinationPath)
-        if verbose:
+        if True: # for testing
             print("Copied:", sourcePath)
             print(" to:", destinationPath)
         
